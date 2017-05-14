@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour {
 
 	public int score = 0;
 
+	bool jiasu1 = false;
+	bool jiasu2 = false;
+
 	public int GameState  = GAMESTATE_MENU;
 
 	public static GameManager _intance;
@@ -31,6 +34,19 @@ public class GameManager : MonoBehaviour {
 				// set bird is playing 
 				// 1.set gravity 2.add velocity of x
 				bird.SendMessage("getLife");
+			}
+		}
+
+		if (score > 5) {
+			if(!jiasu1){
+				bird.SendMessage("speedUp");
+				jiasu1 = true;
+			}
+		}
+		if (score > 10) {
+			if(!jiasu2){
+				bird.SendMessage("speedUp");
+				jiasu2 = true;
 			}
 		}
 	}

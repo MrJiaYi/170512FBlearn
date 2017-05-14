@@ -49,4 +49,9 @@ public class Bird : MonoBehaviour {
 		GetComponent<Rigidbody>().useGravity=true;
 		this.GetComponent<Rigidbody>().velocity = new Vector3(speed,0,0);
 	}
+
+	public void speedUp(){
+		Vector3 vel2  = this.GetComponent<Rigidbody>().velocity;
+		this.GetComponent<Rigidbody>().velocity = new Vector3(vel2.x+1,vel2.y,vel2.z);
+	}
 }
